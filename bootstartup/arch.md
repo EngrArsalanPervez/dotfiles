@@ -37,14 +37,9 @@ z
 ### Archinstall
 
 ```bash
-archinstall
-# Keep everything default
-
-# Post Installation
-# Drop to chroot
-pacman -S fastfetch firefox haruna libreoffice-fresh gcc \
-make cmake git nano vim \
-htop power-profiles-daemon flatpak rust wget curl perl
+archinstall # Keep everything default
+# Drop to chroot for Post Installation
+pacman -S fastfetch firefox haruna libreoffice-fresh gcc make cmake git nano vim htop power-profiles-daemon flatpak rust wget curl perl
 exit
 shutdown now
 ```
@@ -66,7 +61,6 @@ sudo pacman -Syu --noconfirm #Update/Upgrade
 # -S → sync/install
 # -y → refresh package database
 # -u → upgrade all packages
-
 sudo pacman -S --needed base-devel --noconfirm
 ```
 
@@ -85,21 +79,9 @@ yay -Syu
 
 ```bash
 sudo pacman -Syu --noconfirm #Update/Upgrade
-
-sudo pacman -S --needed \
-openssh tmux net-tools inetutils iputils netcat \
-hping nmap sshfs git curl wget lazygit sshpass \
-htop btop fastfetch screen \
-libxml2 hyperscan \
-traceroute vlc \
-python python-pip python-virtualenv python-pyelftools python-scapy \
-wireshark-qt \
-tcpdump ethtool iperf3 partitionmanager ntfs-3g \
---noconfirm
-
+sudo pacman -S --needed openssh tmux net-tools inetutils iputils netcat hping nmap sshfs git curl wget lazygit sshpass htop btop fastfetch screen libxml2 hyperscan traceroute vlc python python-pip python-virtualenv python-pyelftools python-scapy wireshark-qt tcpdump ethtool iperf3 partitionmanager ntfs-3g --noconfirm
 # Enable SSH
 sudo systemctl enable --now sshd
-
 yay -S ifstat
 ```
 
@@ -108,18 +90,7 @@ yay -S ifstat
 ```bash
 # C Programming
 sudo pacman -Syu --noconfirm #Update/Upgrade
-
-sudo pacman -S --needed \
-ctags base-devel cmake \
-openssl zlib elfutils libpcap numactl libevent libbsd \
-man-pages \
-ncurses flex bison bc \
-clang llvm lldb lld clang-tools-extra \
-gdb meson ninja pkgconf \
-valgrind bear ccache \
-doxygen graphviz cppcheck pahole perf \
---noconfirm
-
+sudo pacman -S --needed ctags base-devel cmake openssl zlib elfutils libpcap numactl libevent libbsd man-pages ncurses flex bison bc clang llvm lldb lld clang-tools-extra gdb meson ninja pkgconf valgrind bear ccache doxygen graphviz cppcheck pahole perf --noconfirm
 yay -S dwarves ack
 ```
 
@@ -127,31 +98,16 @@ yay -S dwarves ack
 
 ```bash
 sudo pacman -Syu --noconfirm #Update/Upgrade
-
-sudo pacman -S --needed \
-pkgconf base-devel meson ninja numactl \
-dtc libbpf libxdp libarchive jansson \
---noconfirm
+sudo pacman -S --needed pkgconf base-devel meson ninja numactl dtc libbpf libxdp libarchive jansson --noconfirm
 ```
 
 ## Lazyvim Pre-Requisite
 
 ```bash
-# Python Neovim support
 sudo pacman -Syu --noconfirm #Update/Upgrade
-
-# Pynvim
 sudo pacman -S --needed python-pynvim --noconfirm
-
-# NodeJS + npm
 sudo pacman -S --needed nodejs npm --noconfirm
-
-# CLI utils & dev tools
-sudo pacman -S --needed \
-xclip ripgrep fzf fd luarocks imagemagick texlive-core \
---noconfirm
-
-# Global npm packages
+sudo pacman -S --needed xclip ripgrep fzf fd luarocks imagemagick texlive-core --noconfirm
 sudo npm install -g tree-sitter-cli @mermaid-js/mermaid-cli neovim
 ```
 
@@ -159,7 +115,6 @@ sudo npm install -g tree-sitter-cli @mermaid-js/mermaid-cli neovim
 
 ```bash
 sudo pacman -Syu --noconfirm #Update/Upgrade
-
 sudo pacman -S --needed go --noconfirm
 ```
 
@@ -167,29 +122,18 @@ sudo pacman -S --needed go --noconfirm
 
 ```bash
 sudo pacman -Syu --noconfirm #Update/Upgrade
-
 sudo pacman -S --needed neovim --noconfirm
 ```
 
 ## Docker
 
 ```bash
-# Remove previous
 sudo pacman -Rs docker docker-compose containerd runc
-
 sudo pacman -Syu --noconfirm #Update/Upgrade
-
-# Install Docker & related tools
 sudo pacman -S --needed docker docker-compose docker-buildx containerd --noconfirm
-
-# Start Docker service
 sudo systemctl enable --now docker
-
-# Add user to Docker group
 sudo groupadd -f docker
 sudo usermod -aG docker $USER
-
-# Test Docker
 sudo docker run hello-world
 ```
 
@@ -203,34 +147,21 @@ sudo pacman -S --needed --noconfirm alacritty tmux
 ## yazi
 
 ```bash
-# Install utilities
-sudo pacman -S --needed ffmpeg p7zip jq poppler fd ripgrep \
-fzf zoxide imagemagick xclip wl-clipboard --noconfirm
-
-# Install yazi
+sudo pacman -S --needed ffmpeg p7zip jq poppler fd ripgrep fzf zoxide imagemagick xclip wl-clipboard --noconfirm
 sudo pacman -Syu yazi --noconfirm
-
-# Verify yazi and add alias
 yazi --version
 echo "alias yy='yazi'" >> ~/.bashrc
 source ~/.bashrc
 yy
-
-# Optional: clean AUR cache
 rm -rf ~/.cache/yay/*
 ```
 
 ## Default Editor
 
 ```bash
-# Add EDITOR and VISUAL to bashrc
 echo 'export EDITOR="nvim"' >> ~/.bashrc
 echo 'export VISUAL="nvim"' >> ~/.bashrc
-
-# Reload bashrc immediately
 source ~/.bashrc
-
-# verify
 echo $EDITOR   # outputs: nvim
 echo $VISUAL   # outputs: nvim
 ```
