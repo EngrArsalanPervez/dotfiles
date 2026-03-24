@@ -79,7 +79,7 @@ yay -Syu
 
 ```bash
 sudo pacman -Syu --noconfirm #Update/Upgrade
-sudo pacman -S --needed openssh tmux net-tools inetutils iputils netcat hping nmap sshfs git curl wget lazygit sshpass htop btop fastfetch screen libxml2 hyperscan traceroute vlc python python-pip python-virtualenv python-pyelftools python-scapy wireshark-qt tcpdump ethtool iperf3 partitionmanager ntfs-3g --noconfirm
+sudo pacman -S --needed tree openssh tmux net-tools inetutils iputils netcat hping nmap sshfs git curl wget lazygit sshpass htop btop fastfetch screen libxml2 hyperscan traceroute vlc python python-pip python-virtualenv python-pyelftools python-scapy wireshark-qt tcpdump ethtool iperf3 partitionmanager ntfs-3g --noconfirm
 # Enable SSH
 sudo systemctl enable --now sshd
 yay -S ifstat
