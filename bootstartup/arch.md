@@ -90,6 +90,15 @@ yay -S ifstat
 ```bash
 # C Programming
 sudo pacman -Syu --noconfirm #Update/Upgrade
+sudo pacman -S ctags cscope global
+sudo pacman -S valgrind strace ltrace perf
+sudo pacman -S man-db man-pages tldr
+sudo pacman -S cppcheck clang-analyzer
+sudo pacman -S linux-headers bpf bpftrace
+sudo pacman -S tcpdump wireshark-qt iperf3 nmap traceroute
+sudo pacman -S git lazygit
+sudo pacman -S ripgrep fd bat eza fzf
+sudo pacman -S numactl hwloc
 sudo pacman -S --needed ctags base-devel cmake openssl zlib elfutils libpcap numactl libevent libbsd man-pages ncurses flex bison bc clang llvm lldb lld clang-tools-extra gdb meson ninja pkgconf valgrind bear ccache doxygen graphviz cppcheck pahole perf --noconfirm
 yay -S dwarves ack
 ```
