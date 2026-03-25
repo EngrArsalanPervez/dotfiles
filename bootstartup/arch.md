@@ -174,3 +174,10 @@ source ~/.bashrc
 echo $EDITOR   # outputs: nvim
 echo $VISUAL   # outputs: nvim
 ```
+
+## SSH Passphrase
+
+```bash
+sudo pacman -S keychain
+echo 'eval $(keychain --eval --agents ssh ~/.ssh/id_ed25519)' >> ~/.bashrc
+```
