@@ -163,6 +163,38 @@ rm -rf ~/.cache/nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 nvim
+
+coding.blink
+coding.mini-surround
+coding.yanky
+dap.core
+editor.aerial
+editor.dial
+editor.inc-rename
+editor.outline
+editor.overseer
+editor.refactoring
+editor.snacks_explorer
+editor.snacks_picker
+formatting.prettier
+test.core
+ui.dashboard-nvim
+util.dot
+util.gitui
+util.mini-hipatterns
+
+# Enabled Languages: (11)
+lang.clangd
+lang.cmake
+lang.docker
+lang.git
+lang.go
+lang.json
+lang.markdown
+lang.python
+lang.sql
+lang.toml
+lang.yaml
 ```
 
 ## Grub: IOMMU / Hugepages (256GB on each socket)
