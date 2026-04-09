@@ -123,6 +123,18 @@ sudo apt update
  sudo usermod -aG docker $USER
 ```
 
+# Fonts
+
+```
+cd ~
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/ComicShannsMono.zip
+unzip ComicShannsMono.zip
+sudo cp Comic*.otf /usr/share/fonts/
+sudo cp Comic*.otf /usr/local/share/fonts/
+rm *.otf
+rm ComicShannsMono.zip
+```
+
 ## Tmux
 
 ```bash
@@ -133,6 +145,12 @@ sudo apt update
 
 ```bash
 # Setup config from: https://github.com/EngrArsalanPervez/yazi_kitty
+```
+
+## Alacritty
+
+```bash
+# Setup config from: https://github.com/EngrArsalanPervez/alacritty
 ```
 
 ## Grub: IOMMU / Hugepages (256GB on each socket)
