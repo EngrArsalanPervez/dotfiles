@@ -88,6 +88,15 @@ sudo chmod 777 nvim-linux-x86_64.appimage
 sudo cp nvim-linux-x86_64.appimage /usr/bin/nvim
 ```
 
+# GitDiff
+
+```bash
+sudo apt install meld
+
+git config --global diff.tool meld
+git config --global difftool.prompt false
+```
+
 ## Docker
 
 ```bash
